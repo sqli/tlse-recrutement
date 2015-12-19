@@ -1,0 +1,49 @@
+$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
+
+// bower:scss
+@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+// endbower
+
+$primary-color: #2d2d2d;
+
+html{
+  height: 100%;
+  margin: 0px;
+  overflow: hidden;
+  body{
+    height: 100%;
+    margin: 0px;
+    overflow: hidden;
+    background: url(../images/bg-page.jpg);
+    color: $primary-color;
+    font-family: 'Roboto', sans-serif;
+    header{
+      height: 40px;
+      @import "modules/header";
+    }
+    nav{
+      height: 30px;
+      @import "modules/nav";
+    }
+    main{
+      width: calc(100% - 300px);
+      height: calc(100% - 100px);
+      margin: 0px 0px 0px 50px;
+      padding: 20px 0px 0px 20px;
+      overflow-x: auto;
+      float: left;
+      @import "modules/main";
+    }
+    aside{
+      width: 200px;
+      height: calc(100% - 100px);
+      margin: 0px 50px 0px 0px;
+      overflow-x: auto;
+      @import "modules/aside";
+    }
+    footer{
+      height: 30px;
+      @import "modules/footer";
+    }
+  }
+}

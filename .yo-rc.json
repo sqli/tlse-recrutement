@@ -1,0 +1,14 @@
+{
+  "generator-lb": {
+    "name": "tlse recrutement",
+    "features": [
+      "includeFEFramework",
+      "includeModernizr",
+      "includejQuery"
+    ],
+    "sassCompilator": "rubySass",
+    "multiLanguage": false,
+    "jQuery": "includejQuery1",
+    "feFramework": "includeBootstrap"
+  }
+}
