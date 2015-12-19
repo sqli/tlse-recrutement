@@ -1,9 +1,0 @@
-extends layouts/_default
-
-block main
-  each job in jobs
-    section.col-xs-12.col-sm-6.col-md-4.col-lg-3
-      article.front
-        h2 #{job.name}
-      article.back
-        p #{job.description}
