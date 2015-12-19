@@ -1,5 +1,5 @@
 const myApp = myApp || {};
 
-$(document).ready(function(){
+$(document).ready(function() {
   $('html').removeClass('hidden');
 });
