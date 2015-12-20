@@ -1,0 +1,36 @@
+@mixin responsive-layout($font-size, $header-height, $nav-height, $main-margin, $aside-width, $footer-height) {
+  $main-height: calc(100% - #{$header-height + $nav-height + $footer-height});
+  $aside-height: $main-height;
+
+  body{
+    font-size: $font-size;
+    header{
+      height: $header-height;
+      padding: 5px $main-margin 5px $main-margin;
+    }
+    nav{
+      padding: 0px $main-margin 0px $main-margin;
+      height: $nav-height;
+    }
+    main{
+      width: calc(100% - #{$main-margin * 2 + $aside-width});
+      height: $main-height;
+      margin: 0px 0px 0px $main-margin;
+      padding: 20px 0px 0px 20px;
+    }
+    aside{
+      width: $aside-width;
+      height: $aside-height;
+      margin: 0px $main-margin 0px 0px;
+    }
+    footer{
+      height: $footer-height;
+      padding-right: $aside-width;
+      &:before{
+        right: $main-margin;
+        height: $footer-height;
+        width: $aside-width;
+      }
+    }
+  }
+}

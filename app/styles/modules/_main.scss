@@ -11,7 +11,7 @@
     border-right: 15px solid $danger-color;
   }
 
-  font-size: 12px;
+  font-size: 1em;
   background-color: rgba(255, 255, 255, 0.5);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3) inset;
   section.job-list{
@@ -45,7 +45,7 @@
         display: table;
         h2{
           color: $info-color;
-          font-size: 24px;
+          font-size: 1.8em;
           text-align: center;
           vertical-align: middle;
           text-align: right;
@@ -58,7 +58,7 @@
       &.back{
         background-color: $primary-color;
         color: $secondary-color;
-        font-size: 12px;
+        font-size: 1em;
         transform: rotateY(180deg);
         overflow: hidden;
         text-align: justify;
@@ -68,7 +68,7 @@
           font-weight: bold;
           display: block;
           height: 30px;
-          font-size: 20px;
+          font-size: 1.5em;
           border-radius: 0px;
           margin-bottom: 2px;
         }
@@ -76,7 +76,7 @@
           color: white;
           font-weight: normal;
           width: 30%;
-          font-size: 10px;
+          font-size: 0.9em;
           position: absolute;
           bottom: 20px;
           left: 100px;
@@ -143,6 +143,7 @@
       width: 20px;
       color: white;
       padding: 1px 0px 0px 0px;
+      font-size: 12px;
       font-weight: bold;
       text-align: center;
       text-transform: lowercase;
@@ -150,13 +151,13 @@
     h2{
       color: $secondary-color;
       font-weight: bold;
-      font-size: 20px;
+      font-size: 1.5em;
     }
     p{
       color: white;
       text-align: justify;
       font-weight: lighter;
-      font-size: 10px;
+      font-size: 1em;
     }
     button{
       position: absolute;

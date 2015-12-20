@@ -4,6 +4,26 @@ $icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/"
 @import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
 // endbower
 
+@import "mixin/responsive-layout";
+
+$xs-min-width: 0px;
+$sm-min-width: 500px;
+$md-min-width: 700px;
+$lg-min-width: 1000px;
+
+@media screen and (min-width: $xs-min-width) and (max-width: $sm-min-width - 1) {
+  @include responsive-layout(10px, 20px, 20px, 0px, 0px, 15px);
+}
+@media screen and (min-width: $sm-min-width) and (max-width: $md-min-width - 1) {
+  @include responsive-layout(12px, 20px, 20px, 0px, 100px, 20px);
+}
+@media screen and (min-width: $md-min-width) and (max-width: $lg-min-width - 1) {
+  @include responsive-layout(14px, 40px, 30px, 20px, 150px, 30px);
+}
+@media screen and (min-width: $lg-min-width){
+  @include responsive-layout(14px, 40px, 30px, 50px, 200px, 30px);
+}
+
 $primary-color: #2d2d2d;
 $secondary-color: #967d4d;
 $info-color: #0080c0;
@@ -22,32 +42,22 @@ html{
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
     header{
-      height: 40px;
       @import "modules/header";
     }
     nav{
-      height: 30px;
       @import "modules/nav";
     }
     main{
-      width: calc(100% - 300px);
-      height: calc(100% - 100px);
-      margin: 0px 0px 0px 50px;
-      padding: 20px 0px 0px 20px;
       overflow-y: auto;
       overflow-x: hidden;
       float: left;
       @import "modules/main";
     }
     aside{
-      width: 200px;
-      height: calc(100% - 100px);
-      margin: 0px 50px 0px 0px;
       overflow-x: auto;
       @import "modules/aside";
     }
     footer{
-      height: 30px;
       @import "modules/footer";
     }
   }
