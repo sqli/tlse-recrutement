@@ -1,20 +1,36 @@
 @import "mixin/responsive-layout";
 
-$xs-min-width: 0px;
-$sm-min-width: 500px;
-$md-min-width: 800px;
-$lg-min-width: 1100px;
+$min-width-1: 0px;
+$min-width-2: 400px;
+$min-width-3: 500px;
+$min-width-4: 550px;
+$min-width-5: 800px;
+$min-width-6: 900px;
+$min-width-7: 1000px;
+$min-width-8: 1200px;
 
-@media screen and (min-width: $xs-min-width) and (max-width: $sm-min-width - 1) {
+@media screen and (min-width: $min-width-1) and (max-width: $min-width-2 - 1) {
   @include responsive-layout(1, 10px, 20px, 20px, 0px, 0px, 15px);
 }
-@media screen and (min-width: $sm-min-width) and (max-width: $md-min-width - 1) {
-  @include responsive-layout(2, 12px, 20px, 20px, 0px, 100px, 20px);
+@media screen and (min-width: $min-width-2) and (max-width: $min-width-3 - 1) {
+  @include responsive-layout(1, 10px, 20px, 20px, 0px, 100px, 15px);
 }
-@media screen and (min-width: $md-min-width) and (max-width: $lg-min-width - 1) {
-  @include responsive-layout(3, 14px, 40px, 30px, 20px, 150px, 30px);
+@media screen and (min-width: $min-width-3) and (max-width: $min-width-4 - 1) {
+  @include responsive-layout(1, 10px, 20px, 20px, 0px, 125px, 15px);
 }
-@media screen and (min-width: $lg-min-width){
+@media screen and (min-width: $min-width-4) and (max-width: $min-width-5 - 1) {
+  @include responsive-layout(2, 12px, 20px, 30px, 0px, 125px, 20px);
+}
+@media screen and (min-width: $min-width-5) and (max-width: $min-width-6 - 1) {
+  @include responsive-layout(2, 14px, 40px, 30px, 20px, 150px, 30px);
+}
+@media screen and (min-width: $min-width-6) and (max-width: $min-width-7 - 1){
+  @include responsive-layout(2, 14px, 40px, 30px, 50px, 200px, 30px);
+}
+@media screen and (min-width: $min-width-7) and (max-width: $min-width-8 - 1){
+  @include responsive-layout(3, 14px, 40px, 30px, 50px, 200px, 30px);
+}
+@media screen and (min-width: $min-width-8) {
   @include responsive-layout(4, 14px, 40px, 30px, 50px, 200px, 30px);
 }
 
