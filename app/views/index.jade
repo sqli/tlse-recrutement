@@ -1,9 +1,18 @@
 extends layouts/_default
 
 block main
+  section.corner.job-detail.col-xs-12
+    a(href='#').close-job-detail x
+    h2
+    p
+    button.postuler.btn.btn-primary Postuler
   each job in jobs
-    section.col-xs-12.col-sm-6.col-md-4.col-lg-3
-      article.front
+    section.active.job-list.col-xs-12.col-sm-6.col-md-4.col-lg-3
+      article.corner.front
         h2 #{job.name}
-      article.back
-        p #{job.description}
+      article.corner.back
+        each tag in job.tags
+          span #{tag}
+        h3 #{job.name}
+        p.hidden #{job.description}
+        button(data-name='#{job.name}', data-description='#{job.description}').btn.btn-primary +
