@@ -1,18 +1,22 @@
 $(document).ready(function ready() {
-  const sendReadToAnalytics = function sendAnalytics(jobName){
+  const ga = ga;
+  const sendReadToAnalytics = function sendAnalytics(jobName) {
     ga('set', {
-      page: '/'+jobName,
-      title: jobName
+      page: '/' + jobName,
+      title: jobName,
     });
     ga('send', 'pageview');
   };
-  const sendPostuleToAnalytics = function sendAnalytics(jobName){
+  const sendPostuleToAnalytics = function sendAnalytics(jobName) {
     ga('send', {
       hitType: 'event',
       eventCategory: 'Job',
       eventAction: 'Postule',
-      eventLabel: jobName
+      eventLabel: jobName,
     });
+  };
+  const sendMail = function sendMail(to, cc, cooptant, jobName) {
+    console.log(to, cc, cooptant, jobName);
   };
   $('article.back').find('button').click(function click() {
     const $this = $(this);
