@@ -1,6 +1,19 @@
-const myApp = myApp || {};
-
 $(document).ready(function ready() {
+  const sendReadToAnalytics = function sendAnalytics(jobName){
+    ga('set', {
+      page: '/'+jobName,
+      title: jobName
+    });
+    ga('send', 'pageview');
+  };
+  const sendPostuleToAnalytics = function sendAnalytics(jobName){
+    ga('send', {
+      hitType: 'event',
+      eventCategory: 'Job',
+      eventAction: 'Postule',
+      eventLabel: jobName
+    });
+  };
   $('article.back').find('button').click(function click() {
     const $this = $(this);
     const jobName = $this.attr('data-name');
@@ -10,6 +23,7 @@ $(document).ready(function ready() {
     $('.job-list').removeClass('active');
     $jobDetail.find('h2').text(jobName);
     $jobDetail.find('p').text(jobDescription);
+    sendReadToAnalytics(jobName);
     return false;
   });
   $('.close-job-detail').click(function click() {
@@ -23,6 +37,7 @@ $(document).ready(function ready() {
     const cc = ['rcomadelperier@sqli.com'];
     const cooptant = 'Robin COMA DELPERIER';
     const jobName = $(this).parent().find('h2').text();
-    console.log(to, cc, cooptant, jobName);
+    sendPostuleToAnalytics(jobName);
+    sendMail(to, cc, cooptant, jobName);
   });
 });
