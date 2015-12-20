@@ -1,7 +1,6 @@
 const myApp = myApp || {};
 
 $(document).ready(function ready() {
-  $('html').removeClass('hidden');
   $('article.back').find('button').click(function click() {
     const $this = $(this);
     const jobName = $this.attr('data-name');

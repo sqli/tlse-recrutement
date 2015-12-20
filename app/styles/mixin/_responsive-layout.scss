@@ -1,6 +1,6 @@
-@mixin responsive-layout($font-size, $header-height, $nav-height, $main-margin, $aside-width, $footer-height) {
-  $main-height: calc(100% - #{$header-height + $nav-height + $footer-height});
-  $aside-height: $main-height;
+@mixin responsive-layout($nb-column, $font-size, $header-height, $nav-height, $main-margin, $aside-width, $footer-height) {
+  $main-height: calc(100% - #{$header-height + $nav-height + $footer-height + 30px});
+  $aside-height: calc(100% - #{$header-height + $nav-height + $footer-height + 10px});
 
   body{
     font-size: $font-size;
@@ -13,10 +13,16 @@
       height: $nav-height;
     }
     main{
-      width: calc(100% - #{$main-margin * 2 + $aside-width});
+      width: calc(100% - #{$main-margin * 2 + $aside-width + 20px});
       height: $main-height;
       margin: 0px 0px 0px $main-margin;
       padding: 20px 0px 0px 20px;
+      section{
+        &.job-list{
+          width: calc(100% / #{$nb-column} - 40px);
+          float: left;
+        }
+      }
     }
     aside{
       width: $aside-width;

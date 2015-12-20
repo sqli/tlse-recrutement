@@ -1,27 +1,21 @@
-$icon-font-path: "../../bower_components/bootstrap-sass/assets/fonts/bootstrap/";
-
-// bower:scss
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
-// endbower
-
 @import "mixin/responsive-layout";
 
 $xs-min-width: 0px;
 $sm-min-width: 500px;
-$md-min-width: 700px;
-$lg-min-width: 1000px;
+$md-min-width: 800px;
+$lg-min-width: 1100px;
 
 @media screen and (min-width: $xs-min-width) and (max-width: $sm-min-width - 1) {
-  @include responsive-layout(10px, 20px, 20px, 0px, 0px, 15px);
+  @include responsive-layout(1, 10px, 20px, 20px, 0px, 0px, 15px);
 }
 @media screen and (min-width: $sm-min-width) and (max-width: $md-min-width - 1) {
-  @include responsive-layout(12px, 20px, 20px, 0px, 100px, 20px);
+  @include responsive-layout(2, 12px, 20px, 20px, 0px, 100px, 20px);
 }
 @media screen and (min-width: $md-min-width) and (max-width: $lg-min-width - 1) {
-  @include responsive-layout(14px, 40px, 30px, 20px, 150px, 30px);
+  @include responsive-layout(3, 14px, 40px, 30px, 20px, 150px, 30px);
 }
 @media screen and (min-width: $lg-min-width){
-  @include responsive-layout(14px, 40px, 30px, 50px, 200px, 30px);
+  @include responsive-layout(4, 14px, 40px, 30px, 50px, 200px, 30px);
 }
 
 $primary-color: #2d2d2d;
@@ -41,6 +35,9 @@ html{
     color: $primary-color;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
+    .hidden{
+      display: none;
+    }
     header{
       @import "modules/header";
     }

@@ -1,13 +1,16 @@
 &{
-  font-size: 1.2em;
-  span{
-    &.active{
-      color: $info-color;
-      font-size: 1.3em;
-      font-weight: bold;
-    }
-    &:before{
-      content: ' > ';
+  p{
+    font-size: 1.2em;
+    margin: 0px;
+    span{
+      &.active{
+        color: $info-color;
+        font-size: 1.3em;
+        font-weight: bold;
+      }
+      &:before{
+        content: ' > ';
+      }
     }
   }
 }

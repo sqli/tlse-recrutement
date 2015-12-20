@@ -1,4 +1,16 @@
 &{
+  button{
+    height: 30px;
+    border: none;
+    background-color: $info-color;
+    font-weight: bold;
+    font-size: 1em;
+    color: white;
+    &:hover, &:active, &:visited, &:link, &:focus{
+      background-color: $info-color;
+      cursor: pointer;
+    }
+  }
 
   .corner:after{
     content: ' ';
@@ -17,7 +29,7 @@
   section.job-list{
     padding-left: 0px !important;
     padding-right: 20px !important;
-    margin-bottom: 20px;
+    margin: 0px 20px 20px 0px;
     height: 200px;
     transform-style: preserve-3d;
     perspective: 800px;
@@ -34,8 +46,8 @@
     article{
       position: absolute;
       padding: 20px;
-      height: 200px;
-      width: calc(100% - 20px);
+      height: 160px;
+      width: calc(100% - 40px);
       box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.7);
       transition: transform 1s;
       backface-visibility: hidden;
@@ -82,17 +94,11 @@
           left: 100px;
         }
         button{
+          width: 30px;
           position: absolute;
           bottom: 20px;
           right: 20px;
-          width: 30px;
           border-radius: 50%;
-          border: none;
-          background-color: $info-color;
-          font-weight: bold;
-          &:hover, &:active, &:visited, &:link, &:focus{
-            background-color: $info-color;
-          }
         }
       }
       &::before{
@@ -132,21 +138,25 @@
       transition: opacity 1s, transform 1s;
     }
     background-color: $primary-color;
-    min-height: calc(100% - 20px);
-    width: calc(100% - 20px);
+    min-height: calc(100% - 60px);
+    width: calc(100% - 60px);
     padding: 20px 20px 20px 20px;
     a.close-job-detail{
       background-color: $info-color;
       border-radius: 50%;
       float: right;
-      height: 20px;
+      height: 18px;
       width: 20px;
       color: white;
-      padding: 1px 0px 0px 0px;
+      padding: 2px 0px 0px 0px;
       font-size: 12px;
       font-weight: bold;
       text-align: center;
       text-transform: lowercase;
+      &:hover, &:active, &:visited, &:link, &:focus{
+        color: white;
+        text-decoration: none;
+      }
     }
     h2{
       color: $secondary-color;
@@ -158,18 +168,11 @@
       text-align: justify;
       font-weight: lighter;
       font-size: 1em;
+      margin-bottom: 50px;
     }
     button{
-      position: absolute;
-      bottom: 20px;
-      right: 20px;
-      border-radius: 0px;
-      border: none;
-      background-color: $info-color;
-      font-weight: bold;
-      &:hover, &:active, &:visited, &:link, &:focus{
-        background-color: $info-color;
-      }
+      float: right;
+      margin-top: -30px;
     }
   }
 }
