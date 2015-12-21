@@ -22,11 +22,13 @@ $(document).ready(function ready() {
     const $this = $(this);
     const jobName = $this.attr('data-name');
     const jobDescription = $this.attr('data-description');
+    const jobProfil = $this.attr('data-profil');
     const $jobDetail = $('.job-detail');
     $jobDetail.addClass('active');
     $('.job-list').removeClass('active');
-    $jobDetail.find('h2').text(jobName);
-    $jobDetail.find('p').text(jobDescription);
+    $jobDetail.find('.job-name').text(jobName);
+    $jobDetail.find('.job-description').text(jobDescription);
+    $jobDetail.find('.job-profil').text(jobProfil);
     sendReadToAnalytics(jobName);
     return false;
   });

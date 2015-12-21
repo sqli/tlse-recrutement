@@ -3,8 +3,18 @@ extends layouts/_default
 block main
   section.corner.job-detail
     a(href='#').close-job-detail x
-    h2
-    p
+    h2.job-name
+    p PROPULSEZ VOTRE CARRIÈRE AU RYTHME DE LA TRANSFORMATION DIGITALE !
+    p La révolution numérique a changé les règles. Chez SQLI, nous avons bien compris les nouveaux défis qu’elle implique. En rejoignant nos 1 800 collaborateurs  passionnés par les nouvelles technologies, vous aidez les entreprises à développer leur business et les marques à anticiper le futur. Vous imaginez des interfaces intuitives et sociales ou concevez des systèmes d’information intelligents et performants. Au cœur d’un monde qui bouge, donnez à vos talents le meilleur terrain d’expression.
+    p WAX Interactive est une agence de marketing digital qui propose une gamme complète de services et de solutions pour accompagner les marques et les enseignes commerciales dans leur transformation digitale. Son offre unique, qui associe marketing, technologie, innovation et créativité, allie la recherche de l’efficacité et de la performance à l’expérience utilisateur, développe la notoriété et la fidélisation à la marque, et s'articule autour de trois pôles de compétence complémentaires : "Integrated Digital Marketing", "Connected Commerce" et "Data Intelligence". WAX Interactive imagine, construit et promeut des dispositifs digitaux sur toutes les plateformes web et mobile autour d'un enjeu simple : connecter pour convertir et fidéliser les consommateurs.Ses 500 passionnés sont basés en France, en Suisse, en Belgique et au Maroc. WAX Interactive est une marque du Groupe SQLI.
+    p Fort de son expertise technique et de sa culture d’innovation, SQLI Toulouse accompagne ses clients de la définition de leur stratégie à la réalisation concrète de leurs projets. SQLI à Toulouse c’est :
+      ul
+        li Des projets innovants tournés vers les nouvelles technologies et les nouveaux usages
+        li Une méthodologie qui allie la structure de CMMI 5 avec la flexibilité des pratiques AGILE
+        li De la veille technologique : communauté d’experts, partage et retours d’expériences, coding dojo.
+        li Un management RH de proximité : vous construisez votre carrière professionnelle avec ceux qui font équipe avec vous au quotidien.
+    pre.job-description
+    p.job-profil
     button.postuler Postuler
   each job in jobs
     section.job-list.active
@@ -15,4 +25,5 @@ block main
           span #{tag}
         h3 #{job.name}
         p.hidden #{job.description}
-        button(data-name='#{job.name}', data-description='#{job.description}') +
+        p.hidden #{job.profil}
+        button(data-name='#{job.name}', data-description='#{job.description}', data-profil='#{job.profil}') +
