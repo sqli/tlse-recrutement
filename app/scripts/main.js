@@ -1,5 +1,4 @@
 $(document).ready(function ready() {
-  const ga = ga;
   const sendReadToAnalytics = function sendAnalytics(jobName) {
     ga('set', {
       page: '/' + jobName,
@@ -23,12 +22,20 @@ $(document).ready(function ready() {
     const jobName = $this.attr('data-name');
     const jobDescription = $this.attr('data-description');
     const jobProfil = $this.attr('data-profil');
+    const isWax = $this.attr('data-is-wax') === 'true';
     const $jobDetail = $('.job-detail');
     $jobDetail.addClass('active');
     $('.job-list').removeClass('active');
     $jobDetail.find('.job-name').text(jobName);
     $jobDetail.find('.job-description').text(jobDescription);
     $jobDetail.find('.job-profil').text(jobProfil);
+    if (isWax) {
+      $jobDetail.find('.job-detail-sqli').hide();
+      $jobDetail.find('.job-detail-wax').show();
+    } else {
+      $jobDetail.find('.job-detail-sqli').show();
+      $jobDetail.find('.job-detail-wax').hide();
+    }
     sendReadToAnalytics(jobName);
     return false;
   });

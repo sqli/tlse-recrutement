@@ -51,15 +51,50 @@
       box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.7);
       transition: transform 1s;
       backface-visibility: hidden;
+
+      &.sqli{
+        h2{
+          color: $secondary-color;
+        }
+        span.logo{
+          background-image: url(../images/SQLI-Institut.png);
+          background-size: 90px 50px;
+          height: 50px;
+          width: 90px;
+          position: absolute;
+          bottom: 2px;
+          right: 2px;
+          opacity: 0.3;
+        }
+        &:before{
+          background-image: url(../images/didier.jpg);
+        }
+      }
+      &.wax{
+        h2{
+          color: $info-color;
+        }
+        span.logo{
+          background-image: url(../images/SQLI-Wax.png);
+          background-size: 110px 50px;
+          height: 50px;
+          width: 110px;
+          position: absolute;
+          bottom: 2px;
+          right: 2px;
+          opacity: 0.3;
+        }
+        &:before{
+          background-image: url(../images/didier.jpg);
+        }
+      }
       &.front{
-        background-color: rgba(252,252,252,0.6);
+        background-color: rgba(252,252,252,0.8);
         transform: rotateY(0deg);
         display: table;
         h2{
-          color: $info-color;
+          padding-top: 30px;
           font-size: 1.8em;
-          text-align: center;
-          vertical-align: middle;
           text-align: right;
           display:table-cell;
           -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
@@ -80,18 +115,13 @@
           font-weight: bold;
           display: block;
           height: 30px;
-          font-size: 1.5em;
+          font-size: 1.2em;
           border-radius: 0px;
           margin-bottom: 2px;
-        }
-        h3{
-          color: white;
-          font-weight: normal;
-          width: 30%;
-          font-size: 0.9em;
-          position: absolute;
-          bottom: 20px;
-          left: 100px;
+          white-space: nowrap;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
         button{
           width: 30px;
@@ -101,14 +131,13 @@
           border-radius: 50%;
         }
       }
-      &::before{
+      &:before{
         content: ' ';
         position: absolute;
         top: 0px;
         left: 0px;
         height: 100%;
         width: 100%;
-        background-image: url(../images/didier.jpg);
         background-repeat: no-repeat;
         background-position: -116px 0px;
         opacity: 0.2;
@@ -164,18 +193,22 @@
       font-weight: bold;
       font-size: 1.5em;
     }
-    p, pre{
+    h3{
+      color: $info-color;
+      font-weight: bold;
+      font-size: 1em;
+    }
+    p, pre, li{
       font-family: inherit;
-      color: white;
+      color: lighten($secondary-color, 15%);
       text-align: justify;
       font-weight: lighter;
       font-size: 1em;
       white-space: pre-wrap;
+      font-weight: 100;
     }
-    ul{
-      li{
-        color: white;
-      }
+    pre{
+      color: white;
     }
     button{
       float: right;

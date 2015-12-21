@@ -1,12 +1,13 @@
 {
   "extends": "airbnb/base",
-  
+
   "rules": {
     "no-trailing-spaces": [2, { "skipBlankLines": true }]
   },
-  
+
   "globals": {
     "$": true,
-    "Modernizr": true
+    "Modernizr": true,
+    "ga"
   }
 }
