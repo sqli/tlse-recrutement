@@ -24,7 +24,7 @@
   }
 
   font-size: 1em;
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3) inset;
   section.job-list{
     padding-left: 0px !important;
@@ -48,48 +48,55 @@
       padding: 20px;
       height: 160px;
       width: calc(100% - 40px);
-      box-shadow: 10px 10px 10px -10px rgba(0, 0, 0, 0.7);
+      box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.4);
       transition: transform 1s;
       backface-visibility: hidden;
 
       &.sqli{
         h2{
-          color: $secondary-color;
+          color: white;
         }
         span.logo{
+          margin: 0px 10px 10px 0px;
           background-image: url(../images/SQLI-Institut.png);
-          background-size: 90px 50px;
-          height: 50px;
-          width: 90px;
+          background-size: 80px 38px;
+          background-repeat: no-repeat;
+          width: 80px;
+          height: 38px;
           position: absolute;
           bottom: 2px;
           right: 2px;
-          opacity: 0.3;
+          opacity: 0.8;
         }
-        &:before{
+        &.back:before{
           background-image: url(../images/didier.jpg);
         }
       }
       &.wax{
         h2{
-          color: $info-color;
+          color: $wax-primary-color;
         }
         span.logo{
+          margin: 0px 0px 10px 0px;
           background-image: url(../images/SQLI-Wax.png);
-          background-size: 110px 50px;
-          height: 50px;
-          width: 110px;
+          background-size: 100px 40px;
+          background-repeat: no-repeat;
+          width: 100px;
+          height: 40px;
           position: absolute;
           bottom: 2px;
           right: 2px;
-          opacity: 0.3;
+          opacity: 0.8;
         }
-        &:before{
+        &.corner:after{
+          border-right: 15px solid $wax-primary-color;
+        }
+        &.back:before{
           background-image: url(../images/didier.jpg);
         }
       }
       &.front{
-        background-color: rgba(252,252,252,0.8);
+        background-color: rgba($secondary-color, 1);
         transform: rotateY(0deg);
         display: table;
         h2{

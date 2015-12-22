@@ -1,3 +1,4 @@
+@import "modules/scrollbar";
 @import "mixin/responsive-layout";
 
 $min-width-1: 0px;
@@ -22,22 +23,23 @@ $min-width-8: 1200px;
   @include responsive-layout(2, 12px, 20px, 30px, 0px, 125px, 20px);
 }
 @media screen and (min-width: $min-width-5) and (max-width: $min-width-6 - 1) {
-  @include responsive-layout(2, 14px, 40px, 30px, 20px, 150px, 30px);
+  @include responsive-layout(2, 14px, 40px, 30px, 0px, 150px, 30px);
 }
 @media screen and (min-width: $min-width-6) and (max-width: $min-width-7 - 1){
-  @include responsive-layout(2, 14px, 40px, 30px, 50px, 200px, 30px);
+  @include responsive-layout(2, 14px, 40px, 30px, 0px, 200px, 30px);
 }
 @media screen and (min-width: $min-width-7) and (max-width: $min-width-8 - 1){
-  @include responsive-layout(3, 14px, 40px, 30px, 50px, 200px, 30px);
+  @include responsive-layout(3, 14px, 40px, 30px, 0px, 200px, 30px);
 }
 @media screen and (min-width: $min-width-8) {
-  @include responsive-layout(4, 14px, 40px, 30px, 50px, 200px, 30px);
+  @include responsive-layout(4, 14px, 40px, 30px, 0px, 200px, 30px);
 }
 
-$primary-color: #2d2d2d;
-$secondary-color: #967d4d;
-$info-color: #0080c0;
-$danger-color: #ff0000;
+$primary-color: #2D2D2D;
+$wax-primary-color: #42A3C6;
+$secondary-color: #977E4A;
+$info-color: #007FC2;
+$danger-color: #FF0000;
 
 html{
   height: 100%;
@@ -48,6 +50,8 @@ html{
     margin: 0px;
     overflow: hidden;
     background: url(../images/banniere.jpg);
+    background-position: top right;
+    background-size: 100%;
     color: $primary-color;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;

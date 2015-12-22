@@ -6,10 +6,10 @@
     font-size: $font-size;
     header{
       height: $header-height;
-      padding: 5px $main-margin 5px $main-margin;
+      padding: 5px $main-margin 5px $main-margin + 20px;
     }
     nav{
-      padding: 0px $main-margin 0px $main-margin;
+      padding: 0px $main-margin 0px $main-margin + 20px;
       height: $nav-height;
     }
     main{
