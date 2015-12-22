@@ -20,10 +20,10 @@ block main
     section.job-list.active
       article.corner.front(class= job.wax ? "wax" : "sqli")
         h2 #{job.name}
-        span.logo 
+        span.logo
       article.corner.back(class= job.wax ? "wax" : "sqli")
         each tag in job.tags
           span #{tag}
         p.hidden #{job.description}
         p.hidden #{job.profil}
-        button(data-name='#{job.name}', data-description='#{job.description}', data-profil='#{job.profil}, data-is-wax="#{job.wax}"') +
+        button(data-name='#{job.name}', data-description='#{job.description}', data-profil='#{job.profil}', data-is-wax='#{job.wax}') +
