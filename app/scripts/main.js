@@ -1,4 +1,11 @@
 $(document).ready(function ready() {
+  const getCooptant = function getCooptant() {
+    const list = [{
+      name: 'Robin COMA DELPERIER',
+      mail: 'rcomadelperier@sqli.com',
+    }];
+    return list[0];
+  };
   const sendReadToAnalytics = function sendAnalytics(jobName) {
     ga('set', {
       page: '/' + jobName,
@@ -14,8 +21,36 @@ $(document).ready(function ready() {
       eventLabel: jobName,
     });
   };
-  const sendMail = function sendMail(to, cc, cooptant, jobName) {
-    console.log(to, cc, cooptant, jobName);
+  const sendMail = function sendMail(to, cooptant, jobName) {
+    const APIKEY_PUBLIC = '2OC37AciFIbLN1FrHa2plw';
+    $.ajax({
+      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+      type: 'POST',
+      data: {
+        key: APIKEY_PUBLIC,
+        message: {
+          from_email: cooptant.mail,
+          from_name: cooptant.name,
+          to: [{
+            email: to,
+            type: 'to',
+          }, {
+            email: cooptant.mail,
+            name: cooptant.name,
+            type: 'cc',
+          }],
+          subject: 'RE : ' + jobName,
+          html: 'Cette candidature provient d\'une cooptation de ' + cooptant.name + '.',
+        },
+      },
+      success: function success(data) {
+        console.log(data);
+        sendPostuleToAnalytics(jobName);
+      },
+      error: function error(err) {
+        console.error(err);
+      },
+    });
   };
   $('article.back').find('button').click(function click() {
     const $this = $(this);
@@ -47,10 +82,7 @@ $(document).ready(function ready() {
   });
   $('.postuler').click(function click() {
     const to = ['rcomadelperier@sqli.com'];
-    const cc = ['rcomadelperier@sqli.com'];
-    const cooptant = 'Robin COMA DELPERIER';
     const jobName = $(this).parent().find('h2').text();
-    sendPostuleToAnalytics(jobName);
-    sendMail(to, cc, cooptant, jobName);
+    sendMail(to, getCooptant(), jobName);
   });
 });
