@@ -2,7 +2,6 @@
   "name": "tlse-recrutement",
   "private": true,
   "dependencies": {
-    "bootstrap-sass": "~3.3.4",
-    "jquery": "~1.11.2"
+    "jquery": "1.11.2"
   }
 }

@@ -3,8 +3,23 @@ $(document).ready(function ready() {
     const list = [{
       name: 'Robin COMA DELPERIER',
       mail: 'rcomadelperier@sqli.com',
+      part: 95,
+    }, {
+      name: 'Olivier Boyer',
+      mail: 'oboyer@sqli.com',
+      part: 5,
     }];
-    return list[0];
+    const bigTombola = [];
+    for (let index = 0; index < list.length; index++) {
+      const item = list[index];
+      for (let it = 0; it < item.part; it++) {
+        bigTombola.push(item);
+      }
+    }
+    const randomIntFromInterval = function randomIntFromInterval(min, max) {
+      return Math.floor(Math.random() * (max - min + 1) + min);
+    };
+    return bigTombola[randomIntFromInterval(0, bigTombola.length - 1)];
   };
   const sendReadToAnalytics = function sendAnalytics(jobName) {
     ga('set', {
@@ -22,35 +37,17 @@ $(document).ready(function ready() {
     });
   };
   const sendMail = function sendMail(to, cooptant, jobName) {
-    const APIKEY_PUBLIC = '2OC37AciFIbLN1FrHa2plw';
-    $.ajax({
-      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
-      type: 'POST',
-      data: {
-        key: APIKEY_PUBLIC,
-        message: {
-          from_email: cooptant.mail,
-          from_name: cooptant.name,
-          to: [{
-            email: to,
-            type: 'to',
-          }, {
-            email: cooptant.mail,
-            name: cooptant.name,
-            type: 'cc',
-          }],
-          subject: 'RE : ' + jobName,
-          html: 'Cette candidature provient d\'une cooptation de ' + cooptant.name + '.',
-        },
-      },
-      success: function success(data) {
-        console.log(data);
-        sendPostuleToAnalytics(jobName);
-      },
-      error: function error(err) {
-        console.error(err);
-      },
-    });
+    const subject = encodeURI('RE : ' + jobName);
+    const bodyMessage = encodeURI([
+      'Bonjour,',
+      '\nJe viens vers vous avec le soutien de ' + cooptant.name + ' au sujet du poste : ' + jobName + '.',
+      'Vous pouvez trouver mon CV en pièce jointe.',
+      '\nJe vous remercie d\'avance de l\'attention que vous porterez à me candidature,',
+    ].join('\n'));
+
+    const mailtoLink = 'mailto:' + to + '?cc=' + cooptant.mail + '&subject=' + subject + '&body=' + bodyMessage;
+    window.open(mailtoLink, 'emailWindow');
+    sendPostuleToAnalytics(jobName);
   };
   $('article.back').find('button').click(function click() {
     const $this = $(this);
@@ -81,7 +78,7 @@ $(document).ready(function ready() {
     return false;
   });
   $('.postuler').click(function click() {
-    const to = ['rcomadelperier@sqli.com'];
+    const to = 'toulouse.recrutement@sqli.com';
     const jobName = $(this).parent().find('h2').text();
     sendMail(to, getCooptant(), jobName);
   });
